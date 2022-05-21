@@ -1,0 +1,33 @@
+<main data-ng-app="sampleApp" data-ng-controller="mainController">
+    <h1>Class List</h1><br>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <table class="table table-striped table-bordered table-sm row-border hover table-condensed table-hover"
+        id="datatableexample">
+        <thead>
+            <tr class="table-row-index">
+                <th>College</th>
+                <th>Class</th>
+                <th>Level's</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let class of ClassList">
+                <td>{{ class.college.collegeName }}</td>
+                <td>{{ class.title }}</td>
+                <td>{{ class.levels }}</td>
+                <td><button style="border: hidden; background-color: transparent;"><i class="fa fa-download"
+                            style="font-size:24px" (click)="download(class._id)"></i></button>
+                    &nbsp;&nbsp;
+                    <button style="border: hidden; background-color: transparent;"><i class="fa fa-eye"
+                            style="font-size:24px" (click)="edit(class._id)"></i></button>
+                    &nbsp;&nbsp;
+                    <button style="border: hidden; background-color: transparent;"><i class="fa fa-trash"
+                            style="font-size:24px" (click)="Delete(class._id)"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div><i routerLink="/add-class"><button style="width:100% ;margin-top: 50px;padding: 7px; border: 0px solid black;">Add Class</button></i></div>
+
+</main>

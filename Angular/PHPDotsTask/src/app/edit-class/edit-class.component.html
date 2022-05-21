@@ -1,0 +1,61 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title text-center">Update Class Form Fields</div>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="input-group">
+                <span class="input-group-addon"><b>College</b></span>
+                <input type="text" [(ngModel)]="college" class="form-control" readonly>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon"><b>Title</b></span>
+                <input type="text" [(ngModel)]="title" class="form-control">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon"><b>Contact Number</b></span>
+                <input type="text" [(ngModel)]="contact" class="form-control" [maxLength]="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon"><b>Email</b></span>
+                <input type="email" [(ngModel)]="email" class="form-control" readonly required="required">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon"><b>Price</b></span>
+                <input type="text" [(ngModel)]="price" class="form-control" [maxlength]="5"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon"><b>Levels</b></span>
+                <input type="text" [(ngModel)]="levels" class="form-control">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon"><b>Description</b></span>
+                <textarea type="text" [(ngModel)]="description" class="form-control"></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <!-- Button -->
+                <div class="col-sm-12 controls">
+                    <button type="button" (click)="Submit()" class="btn btn-primary pull-left">Submit</button>
+                    &nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger pull-right">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
